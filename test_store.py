@@ -12,5 +12,10 @@ TODO: Finish this test by...
 3) Validate the response codes and values
 4) Validate the response message "Order and pet status updated successfully"
 '''
-def test_patch_order_by_id():
-    pass
+
+@pytest.mark.parametrize("order_id", [0])
+def test_patch_order_by_id(order_id):
+    test_endpoint = f"/store/order/{order_id}"
+    data = {'status': "available"}
+
+    response = api_helpers.patch_api_data(test_endpoint, data)
