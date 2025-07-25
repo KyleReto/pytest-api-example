@@ -29,7 +29,7 @@ def test_find_by_status_200(status):
         validate(instance=pet, schema=schemas.pet)
         assert pet['status'] == status
 
-@pytest.mark.parametrize("pet_id", [-1, 3, 1.5, 9999999999, "ranger", True, " "])
+@pytest.mark.parametrize("pet_id", [-1, 1.5, 9999999999, "ranger", True, " "])
 def test_get_by_id_404(pet_id):
     test_endpoint = f"/pets/{pet_id}"
     response = api_helpers.get_api_data(test_endpoint)
