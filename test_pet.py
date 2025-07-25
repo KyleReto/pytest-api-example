@@ -4,11 +4,6 @@ import schemas
 import api_helpers
 from hamcrest import assert_that, contains_string, is_
 
-'''
-TODO: Finish this test by...
-1) Troubleshooting and fixing the test failure
-The purpose of this test is to validate the response matches the expected schema defined in schemas.py
-'''
 def test_pet_schema():
     test_endpoint = "/pets/1"
 
